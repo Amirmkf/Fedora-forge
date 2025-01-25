@@ -10,14 +10,6 @@ RESET="\033[0m"
 echo -e "${GREEN}Installing Zsh and required utilities...${RESET}"
 sudo dnf install -y zsh util-linux-user
 
-# Set Zsh as the default shell
-if [[ "$SHELL" != "$(which zsh)" ]]; then
-  echo -e "${GREEN}Setting Zsh as the default shell...${RESET}"
-  chsh -s "$(which zsh)"
-else
-  echo "Zsh is already the default shell."
-fi
-
 # Install Oh My Zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   echo -e "${GREEN}Installing Oh My Zsh...${RESET}"
@@ -106,6 +98,14 @@ fi
 # Source the updated .zshrc
 echo -e "${GREEN}Applying changes...${RESET}"
 zsh -c "source ~/.zshrc"
+
+# Set Zsh as the default shell
+if [[ "$SHELL" != "$(which zsh)" ]]; then
+  echo -e "${GREEN}Setting Zsh as the default shell...${RESET}"
+  chsh -s "$(which zsh)"
+else
+  echo "Zsh is already the default shell."
+fi
 
 # Clear the screen
 clear
