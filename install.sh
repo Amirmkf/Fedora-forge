@@ -31,10 +31,6 @@ sudo dnf install git curl wget vim
 echo -e "${GREEN}Setting up fonts...${RESET}"
 bash ./install-scripts/fonts-setup.sh
 
-# Install zsh and Oh my zsh
-echo -e "${GREEN}Setting up Zsh and plugins...${RESET}"
-bash ./install-scripts/zsh-setup.sh
-
 # Install Gnome extentions
 echo -e "${GREEN}Setting up Gnome extentions...${RESET}"
 bash ./install-scripts/gnome-setup.sh
@@ -62,5 +58,9 @@ echo -e "${GREEN}Installing some useful apps...${RESET}"
 bash ./install-scripts/apps-install.sh
 
 sudo dnf upgrade --refresh -y
+
+# Install zsh and Oh my zsh
+echo -e "${GREEN}Setting up Zsh and plugins...${RESET}"
+bash ./install-scripts/zsh-setup.sh
 
 echo -e "${BLUE}Reboot your system to apply all changes.${RESET}"
