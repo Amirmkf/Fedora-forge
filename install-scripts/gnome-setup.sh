@@ -14,9 +14,6 @@ flatpak install flathub com.mattjakeman.ExtensionManager
 # Add Minimize and Maximize buttons to window
 gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize,close'
 
-# Directory for GNOME extensions
-EXTENSIONS_DIR="$HOME/.local/share/gnome-shell/extensions"
-
 # Function to install an extension
 install_extension() {
     EXTENSION_UUID=$1
